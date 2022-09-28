@@ -1,7 +1,7 @@
 # kraken2viz
 
-Kraken2vizはKraken2のレポートファイルをDataFrameに変換し
-解析、可視化までの処理を自動化するツールです。
+Kraken2vizはKraken2のレポートファイルをDataFrameに変換し、
+解析・可視化までの処理を自動化するツールです。
 
 ## 実装予定・実装したい機能
 - Kraken2レポートファイルの指定（必須）
