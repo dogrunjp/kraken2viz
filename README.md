@@ -11,7 +11,7 @@ Jupyter notebook内での利用、あるいはコマンドラインでの画像�
 
 ```
 $ cd kraken2viz  # kraken2vizローカルレポジトリのsetup.pyと同じレベルのに移動する
-$ pyenv local kraken2viz # Jupyter notebook（あるいはPythonの対話モード）で利用する仮想環境を起動する
+$ pyenv local hoge # Jupyter notebook（あるいはPythonの対話モード）で利用する仮想環境を起動する
 $ pip install -e . # setup.pyに記述された設定で仮想環境にkraken2vizがインストールされる
 $ python  # python環境に入る
 ```
