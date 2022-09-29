@@ -5,6 +5,25 @@ Kraken2vizはKraken2のレポートファイルをDataFrameに変換し、
 
 Jupyter notebook内での利用、あるいはコマンドラインでの画像出力に利用することを想定しています。
 
+## 利用例
+
+### ライブラリのインストール
+
+```
+$ cd kraken2viz  # kraken2vizローカルレポジトリのsetup.pyと同じレベルのに移動する
+$ pyenv local kraken2viz # Jupyter notebookを利用する仮想環境を起動する
+$ pip install -e . # setup.pyに記述された設定で仮想環境にkraken2vizがインストールされる
+$ python  # python環境に入る
+```
+
+### 出力
+
+```
+>>> from kraken2viz import plot, convert
+>>> df = convert.plotly_df("Kraken2のレポートファイル)
+>>> plot.plotly_summary(df)
+```
+
 ## 実装予定・実装したい機能
 - Kraken2レポートファイルの指定（必須）
 - png書き出し（CLで処理する用）
