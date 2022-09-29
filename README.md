@@ -5,6 +5,10 @@ Kraken2vizはKraken2のレポートファイルをDataFrameに変換し、
 
 Jupyter notebook内での利用、あるいはコマンドラインでの画像出力に利用することを想定しています。
 
+## Kraken2のレポートファイルについて
+
+Kraken2の二種類のレポートのうち "tab-delimited with one line per taxon"な標準形式のファイルを利用する
+
 ## 利用例
 
 ### ライブラリのインストール
