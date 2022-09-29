@@ -1,5 +1,7 @@
 import pandas as pd
 import argparse
+import sys, os
+
 
 config = dict()
 
@@ -8,6 +10,7 @@ def parse_args(args:list):
     """
     CLおよび他のモジュールからの呼び出しの両者に対応するため
     parseargを関数内で処理する
+    CLから呼ばれた場合のみconfigにオプションを保存する
     :param args:
     :return:
     """
@@ -26,7 +29,7 @@ def set_config():
     config["d"] = args.d
 
 
-def fromat_df(file_path:str):
+def plotly_df(file_path:str):
     """
     Kraken2レポートファイルを
     plotly表示用に整形したDataFrameに変換する
@@ -37,5 +40,4 @@ def fromat_df(file_path:str):
     df = df_tmp.set_index(["root", "1", "R"])
     df.columns = ["Percentage", "Fragments_clade", "Fragments_direct"]
     return df
-
 
