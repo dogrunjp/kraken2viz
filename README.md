@@ -17,16 +17,20 @@ Kraken2の二種類のレポートのうち "tab-delimited with one line per tax
 $ cd kraken2viz  # kraken2vizローカルレポジトリのsetup.pyと同じレベルのに移動する
 $ pyenv local hoge # Jupyter notebook（あるいはPythonの対話モード）で利用する仮想環境を起動する
 $ pip install -e . # setup.pyに記述された設定で仮想環境にkraken2vizがインストールされる
-$ python  # python環境に入る
+
 ```
 
 ### 出力
 
-#### レポートファイルをそのまま可視化する
 ```
->>> from kraken2viz import plot, convert
->>> df = convert.plotly_df("Kraken2のレポートファイル")
->>> plot.plotly_summary(df)
+$ python  # pythonから対話環境に入る・もしくはJupyter notebookを開く
+```
+
+#### レポートファイルをそのまま可視化する
+``` Python
+from kraken2viz import plot, convert
+df = convert.plotly_df("Kraken2のレポートファイル")
+plot.plotly_summary(df)
 ```
 
 #### 複数サンプルをStacked Barplotとして可視化する
