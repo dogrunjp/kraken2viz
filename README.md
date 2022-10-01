@@ -22,11 +22,22 @@ $ python  # python環境に入る
 
 ### 出力
 
+#### レポートファイルをそのまま可視化する
 ```
 >>> from kraken2viz import plot, convert
->>> df = convert.plotly_df("Kraken2のレポートファイル)
+>>> df = convert.plotly_df("Kraken2のレポートファイル")
 >>> plot.plotly_summary(df)
 ```
+
+#### 複数サンプルをStacked Barplotとして可視化する
+
+```Python
+from kraken2viz import plot, convert
+df = convert.plotly_dfs(["レポートファイル#1", "レポートファイル#２"])
+plot.plotly_bars(df)
+
+```
+
 
 ## 実装予定・実装したい機能
 - コマンドラインでの出力
@@ -35,3 +46,4 @@ $ python  # python環境に入る
 - colorスケール指定
 - マルチサンプル間の比較機能
 - 可視化用にフォーマットしたDataFrameのCSVファイルへの書き出し機能
+- Percentage以外の値の利用

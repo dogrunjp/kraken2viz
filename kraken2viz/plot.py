@@ -3,13 +3,29 @@ from kraken2viz import convert
 import argparse
 import sys, os
 
+# Todo: plotのx,y軸を設定にする
+
 
 def plotly_summary(df):
-    # Percent Stackedの利用例が列指向が多いため天地しないまま扱う
+    """
+    Kraken2の標準レポートをそのままTaxonomyランクごとBarchartにプロットする
+    :param df:
+    :return:
+    """
     df4 = df.reset_index()
     fig = px.bar(df4, x="R", y="Percentage", color="root")
     fig.show()
     #fig.write_image("testtest_kraken2viz.png")
+
+
+def plotly_bars(df):
+    """
+    複数のサンプルから得たKraken2の標準レポートをPlotlyのStacked barchartとして描画する
+    :param df: サンプルごとに生成したDataFrameをconcat%整形したDataFrame
+    :return:
+    """
+    fig = px.bar(df, x="Sample", y="Percentage", color="root")
+    fig.show()
 
 
 def parse_args(args:list):
