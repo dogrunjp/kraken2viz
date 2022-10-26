@@ -12,6 +12,10 @@ def plotly_df(file: str) -> pd.DataFrame:
     :param file: Kraken2report file path
     :return: pd.DataFrame
     """
+    # レコード数が多すぎると処理しきれないため、Percentageを指定しデータを丸めるオプションを実装する
+    # defautl Trueで 0.00%であればレコードを省く
+    # 閾値は設定できるようにする
+
     df_tmp = pd.read_csv(file, sep='\t', header=None)
     # rankがRに当たる行をヘッダとする
     header = df_tmp[df_tmp.iloc[:,3]=="R"]

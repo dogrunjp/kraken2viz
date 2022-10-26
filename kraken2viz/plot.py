@@ -12,6 +12,7 @@ def plotly_summary(df):
     :param df:
     :return:
     """
+    # Todo: 行が長すぎるケースがあるため、オプションでタイムアウトなどの処理を入れる
     df4 = df.reset_index()
     fig = px.bar(df4, x="R", y="Percentage", color="root")
     fig.show()
