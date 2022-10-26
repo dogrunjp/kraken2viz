@@ -48,6 +48,5 @@ plot.plotly_bars(df)
 - png書き出し（CLで処理する用）
 - 描画するランク指定
 - colorスケール指定
-- マルチサンプル間の比較機能
 - 可視化用にフォーマットしたDataFrameのCSVファイルへの書き出し機能
 - Percentage以外の値の利用

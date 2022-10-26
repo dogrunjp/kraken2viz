@@ -12,10 +12,10 @@ def plotly_df(file: str) -> pd.DataFrame:
     :param file: Kraken2report file path
     :return: pd.DataFrame
     """
-    df_tmp = pd.read_csv(file, sep='\t')
-    # レポートファイルの先頭行の値が固定値と思われるためインデックス名としているが
-    # インデックス名は付け替えた方が良いかもしれない
-    df = df_tmp.set_index(["root", "1", "R"])
+    df_tmp = pd.read_csv(file, sep='\t', header=None)
+    header = df_tmp[df_tmp.iloc[:,3]=="R"]
+    df_tmp.rename(columns=header.iloc[0],inplace=True)
+    df = df_tmp.set_index(["root", 1, "R"])
     df.columns = ["Percentage", "Fragments_clade", "Fragments_direct"]
     return df
 
