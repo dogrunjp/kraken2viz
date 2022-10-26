@@ -13,8 +13,10 @@ def plotly_df(file: str) -> pd.DataFrame:
     :return: pd.DataFrame
     """
     df_tmp = pd.read_csv(file, sep='\t', header=None)
+    # rankがRに当たる行をヘッダとする
     header = df_tmp[df_tmp.iloc[:,3]=="R"]
     df_tmp.rename(columns=header.iloc[0],inplace=True)
+    # Scientific name, Tax ID, Rankに当たる行をマルチインデックスとする
     df = df_tmp.set_index(["root", 1, "R"])
     df.columns = ["Percentage", "Fragments_clade", "Fragments_direct"]
     return df
